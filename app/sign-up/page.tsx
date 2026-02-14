@@ -49,7 +49,11 @@ export default function SignUp() {
             </CardHeader>
             <form onSubmit={handleSubmit}>
                 <CardContent>
-                { error && <p className="mb-4 text-sm text-red-600">{error}</p> }
+                { error &&  (
+                    <div className="rounded-md bg-destructive/15 p-3 text-sm text-destructive">
+                        {error}
+                    </div>
+                )}
                 <div>
                     <Label htmlFor="name">Name</Label>
                     <Input id="name" type="text" placeholder="John Doe" value={name} onChange={(e) => setName(e.target.value)} required />
@@ -65,7 +69,7 @@ export default function SignUp() {
                 </CardContent>
                 <CardFooter>
                     <Button type="submit" disabled={loading}>
-                        {loading ? "Signing Up..." : "Sign Up"}
+                        {loading ? "Creating account..." : "Sign Up"}
                     </Button>
                     <p>Already have an account? <Link href="/sign-in">Sign In</Link></p>
                 </CardFooter>
