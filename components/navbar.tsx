@@ -26,13 +26,11 @@ export default function Navbar(){
                     </Link>
                     <DropdownMenu>
                         <DropdownMenuTrigger>
-                            <Button variant="ghost">
                                 <Avatar>
                                     <AvatarFallback className="bg-primary text-white">
                                         {session.user.name[0].toUpperCase()}
                                     </AvatarFallback>
                                 </Avatar>
-                            </Button>
                         </DropdownMenuTrigger>
                         
                         <DropdownMenuContent className="w-56" align="end">
